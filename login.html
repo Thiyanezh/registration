@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div>
+        <h1 style="color: white; text-align:center">Log In</h1>
+    </div>
+    <div class="bord">
+    <div class="place">
+        <p style="color: white;">Enter Name:</p>
+        <input id="Name" size=40>
+    </div>
+    <br>
+    <div class="place">
+        <p style="color: white;">Enter password:</p>
+        <input id="Pass" size=40 >
+    </div>
+    <br>
+    <br>
+    <button onclick="
+    secure();
+    
+    " class="but">submit
+    </button>
+    </div>
+    <div class="test" style="visibility: hidden;"">
+    <p></p>
+    </div>
+    <script>
+        function secure()
+        {
+            try{
+            var Ln=document.getElementById('Name').value;
+            var Lp=document.getElementById('Pass').value;
+            var fn=localStorage.getItem(Ln);
+            const out=fn.split(',');
+            
+            var checkp=out[1];
+            if (Ln!=null)
+            {
+                if(checkp===Lp)
+                {
+                    go();
+                }
+                else{
+                    alert('INVALID PASSWORD OR USER NAME');
+                    same();
+                }  
+           }
+        }
+        catch(err)
+           {
+                home();
+           }
+        }
+        function go()
+        {
+            window.location.href="profile.html";
+        }
+        function home()
+        {
+            window.location.href="home.html";
+        }
+        function same()
+        {
+            window.location.href="login.html";
+        }
+    </script>
+</body>
+</html>

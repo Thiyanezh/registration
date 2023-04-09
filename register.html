@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div>
+        <h1 style="color: white; text-align:center">Register</h1>
+    </div>
+    <div class="bord">
+    <div>
+        <p style="color: white;">Enter name:</p>
+        <input id ="name"type ="text" size =40>
+    </div>
+    <br>
+    <div>
+        <p style="color: white;">Enter mail:</p>
+        <input id="mail" type="text" size=40>
+    </div>
+    <br>
+    <div>
+        <p style="color: white;">Enter password</p>
+        <input id = "pass" size= 40>
+    </div>
+    <br>
+    <br>
+    <button onclick="
+    let i=0;
+    get(i++);
+    sucess();
+    home();
+    " class="but">
+    submit
+    </button>
+    </div>
+    <script>
+        function get(i)
+        {
+            var name = document.getElementById('name').value;
+            var mail = document.getElementById('mail').value;
+            var pass = document.getElementById('pass').value;
+            localStorage.setItem(name,[mail,pass]);
+        }
+        function sucess()
+        {
+            alert('register is sucesss');
+            var delayInMilliseconds = 5000; 
+            setTimeout(home() ,{
+            }, delayInMilliseconds);
+        }
+        function home()
+        {
+            window.location.href="home.html";
+        }
+    </script>
+</body> 
+</html>

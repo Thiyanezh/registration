@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"href="profile.css">
+</head>
+<body>
+    <div>
+        <h1 style="color: whitesmoke;text-align:center">Socios</h1>
+    </div>
+    <script>
+        var v=[],
+        keys=Object.keys(localStorage),
+        i=keys.length;
+        var _mail=[];
+        var _pass=[];
+        while(i--)
+        {
+            v.push(localStorage.getItem(keys[i]));
+        }
+        for (let j=0;j<keys.length;j++)
+        {
+        //console.log(v[j]);
+        const s=v[j].split(',');
+        _mail.push(s[0]);
+        _pass.push(s[1]);
+        }
+        var _name=[]
+        let c=0;
+        for(let j=0;j<keys.length;j++)
+        {
+            _name.push(localStorage.key(j));
+            c+=1;
+        }
+        //console.log(_name)
+        console.log(c);
+        let m=0;
+        while(m<c)
+        {
+            document.write('<div class="border">')
+            document.write('<p class="f">Name: '+(_name[m])+'</p>')
+            document.write('<p class="f">Mail: '+(_mail[m])+'</p>')
+            document.write('</div>')
+            document.write('<p></p>')
+            m++;
+        }
+    </script>
+</body>
+</html>
